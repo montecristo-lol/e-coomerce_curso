@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "999667703043",
+    "project_id": "suplemetos-andre",
+    "storage_bucket": "suplemetos-andre.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999667703043:android:10bd8586e4898a6346dd36",
+        "android_client_info": {
+          "package_name": "br.com.elder.andre_suplementos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999667703043-5p3atsk9crcr3ro12qk7tp5masbtm8qh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwwT1UzrlfYfzJ1qftdlhYVj2jVE_izfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999667703043-5p3atsk9crcr3ro12qk7tp5masbtm8qh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
