@@ -2,6 +2,7 @@ import 'package:andre_suplementos/models/cart_manager.dart';
 import 'package:andre_suplementos/models/product.dart';
 import 'package:andre_suplementos/models/user_manager.dart';
 import 'package:andre_suplementos/screens/base/base_screen.dart';
+import 'package:andre_suplementos/screens/cart/cart_screen.dart';
 import 'package:andre_suplementos/screens/login/login_screen.dart';
 import 'package:andre_suplementos/screens/product/product_screen.dart';
 import 'package:andre_suplementos/screens/signup/signup_screen.dart';
@@ -65,7 +66,10 @@ class MyApp extends StatelessWidget {
                   builder: (_) => ProductScreen(
                       settings.arguments as Product
                   ),
-
+              );
+            case '/cart':
+              return MaterialPageRoute(
+                  builder: (_) => CartScreen()
               );
             case '/base':
             default:

@@ -1,3 +1,4 @@
+import 'package:andre_suplementos/models/cart_manager.dart';
 import 'package:andre_suplementos/models/product.dart';
 import 'package:andre_suplementos/screens/product/components/size_widget.dart';
 import 'package:carousel_pro/carousel_pro.dart';
@@ -113,7 +114,8 @@ class ProductScreen extends StatelessWidget {
                           child: RaisedButton(
                             onPressed: product.selectedSize != null ? (){
                               if(userManager.isLoggedIn){
-                                // TODO: ADICIONAR AO CARRINHO
+                                context.read<CartManager>().addToCart(product);
+                                Navigator.of(context).pushNamed('/cart');
                               } else {
                                 Navigator.of(context).pushNamed('/login');
                               }
