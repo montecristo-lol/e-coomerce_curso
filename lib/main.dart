@@ -1,3 +1,4 @@
+import 'package:andre_suplementos/models/cart_manager.dart';
 import 'package:andre_suplementos/models/product.dart';
 import 'package:andre_suplementos/models/user_manager.dart';
 import 'package:andre_suplementos/screens/base/base_screen.dart';
@@ -29,7 +30,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ProductManager(),
           lazy: false,
-        )
+        ),
+        Provider(
+          create: (_) => CartManager(),
+          lazy: false,
+        ),
       ],
       child: MaterialApp(
         title: 'Sr Suplementos',
@@ -59,7 +64,8 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(
                   builder: (_) => ProductScreen(
                       settings.arguments as Product
-                  )
+                  ),
+
               );
             case '/base':
             default:

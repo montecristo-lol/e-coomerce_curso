@@ -1,7 +1,8 @@
 import 'package:andre_suplementos/models/item_size.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 
-class Product {
+class Product extends ChangeNotifier {
 
   Product.fromDocument(DocumentSnapshot document){
     id = document.documentID;
@@ -11,7 +12,7 @@ class Product {
     sizes = (document.data['sizes'] as List<dynamic> ?? []).map(
             (s) => ItemSize.fromMap(s as Map<String, dynamic>)).toList();
 
-    print(sizes);
+
 
   }
 
@@ -20,5 +21,25 @@ class Product {
   String description;
   List<String> images;
   List<ItemSize> sizes;
+
+  ItemSize _selectedSize;
+  ItemSize get selectedSize => _selectedSize;
+  set selectedSize(ItemSize value){
+    _selectedSize = value;
+    notifyListeners();
+  }
+
+  int get totalStock {
+    int stock = 0;
+    for(final size in sizes){
+      stock += size.stock;
+    }
+    return stock;
+  }
+
+  bool get hasStock {
+    return totalStock > 0;
+  }
+
 
 }
