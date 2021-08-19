@@ -49,7 +49,7 @@ class ProductScreen extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     product.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w600
                     ),
@@ -72,7 +72,7 @@ class ProductScreen extends StatelessWidget {
                       color: primaryColor,
                     ),
                   ),
-                  Padding(
+                  const Padding(
                     padding: const EdgeInsets.only(top: 16, bottom: 8),
                     child: Text(
                       'Descrição',
@@ -88,7 +88,7 @@ class ProductScreen extends StatelessWidget {
                         fontSize: 16
                     ),
                   ),
-                  Padding(
+                  const Padding(
                     padding: const EdgeInsets.only(top: 16, bottom: 8),
                     child: Text(
                       'Tamanhos',
@@ -131,13 +131,14 @@ class ProductScreen extends StatelessWidget {
                           ),
                         );
                       },
-                    )
+                    ),
                 ],
               ),
             )
           ],
         ),
       ),
+
     );
   }
 }
