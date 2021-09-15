@@ -1,3 +1,4 @@
+import 'package:andre_suplementos/commom/price_card.dart';
 import 'package:andre_suplementos/models/cart_manager.dart';
 import 'package:andre_suplementos/screens/cart/components/cart_tile.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,19 @@ class CartScreen extends StatelessWidget {
       body: Consumer<CartManager>(
         builder: (_, cartManager, __){
           return ListView(
-            children: cartManager.items.map(
-                    (cartProduct) => CartTile(cartProduct)
-            ).toList(),
+            children: <Widget>[
+              Column(
+                children: cartManager.items.map(
+                        (cartProduct) => CartTile(cartProduct)
+                ).toList(),
+              ),
+              PriceCard(
+                buttonText: 'Continuar para Entrega',
+                onPressed: cartManager.isCartValid ? (){
+
+                } : null,
+              ),
+            ],
           );
         },
       ),
